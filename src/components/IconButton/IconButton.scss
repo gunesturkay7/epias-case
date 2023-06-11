@@ -1,0 +1,72 @@
+.icon-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  /*   display: inline-flex; */
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    transition: fill 0.3s ease-in-out;
+  }
+
+  &.outlined {
+    border: 1px solid;
+    border-radius: 4px;
+    transition: border-color 0.3s ease-in-out;
+  }
+
+  &.small {
+    width: 32px;
+    height: 32px;
+  }
+
+  &.medium {
+    width: 40px;
+    height: 40px;
+  }
+
+  &.large {
+    width: 48px;
+    height: 48px;
+  }
+
+  &.primary {
+    color: #007bff;
+
+    &:hover {
+      svg {
+        fill: #0056b3;
+      }
+    }
+
+    &.outlined {
+      border-color: #007bff;
+
+      &:hover {
+        border-color: #0056b3;
+      }
+    }
+  }
+
+  &.secondary {
+    color: #6c757d;
+
+    &:hover {
+      svg {
+        fill: #545b62;
+      }
+    }
+
+    &.outlined {
+      border-color: #6c757d;
+
+      &:hover {
+        border-color: #545b62;
+      }
+    }
+  }
+
+  // ... add other variants following the same pattern
+}

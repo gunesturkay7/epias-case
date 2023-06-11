@@ -1,0 +1,14 @@
+.size-indicator {
+  position: relative;
+  &__content {
+    position: absolute;
+    background-color: antiquewhite;
+    padding: 15px;
+    right: 15px;
+    top: 15px;
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+    font-weight: 700;
+  }
+}

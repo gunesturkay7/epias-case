@@ -1,0 +1,53 @@
+.avatar {
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  font-family: Arial, sans-serif; // use a clean font-family
+  line-height: 1;
+
+  &--small {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    padding: 4px; // add padding
+  }
+
+  &--medium {
+    width: 80px;
+    height: 80px;
+    font-size: 24px;
+    padding: 8px; // add padding
+  }
+
+  &--large {
+    width: 120px;
+    height: 120px;
+    font-size: 36px;
+    padding: 12px; // add padding
+  }
+
+  &--circle {
+    border-radius: 50%;
+  }
+
+  &--rounded {
+    border-radius: 10px;
+  }
+
+  &--square {
+    border-radius: 0;
+  }
+
+  &--initials {
+    background-color: #4caf50;
+  }
+  &--default {
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 50%;
+  }
+}

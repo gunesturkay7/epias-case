@@ -1,0 +1,11 @@
+[
+  { "id": 1, "contract": "2018", "offer": "Offer 1", "data": "Data 1" },
+  { "id": 2, "contract": "2018", "offer": "Offer 2", "data": "Data 2" },
+  { "id": 3, "contract": "2019", "offer": "Offer 3", "data": "Data 3" },
+  { "id": 4, "contract": "2019", "offer": "Offer 4", "data": "Data 4" },
+  { "id": 5, "contract": "2020", "offer": "Offer 5", "data": "Data 5" },
+  { "id": 6, "contract": "2020", "offer": "Offer 6", "data": "Data 6" },
+  { "id": 7, "contract": "2021", "offer": "Offer 7", "data": "Data 7" },
+  { "id": 8, "contract": "2019", "offer": "Offer 5", "data": "Data 5" },
+  { "id": 9, "contract": "2019", "offer": "Offer 5", "data": "Data 5" }
+]
