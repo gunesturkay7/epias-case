@@ -1,14 +1,17 @@
+/* Dependencies */
 import { useState, useEffect, useCallback } from "react";
+/* Components */
 import ColumnSelector from "./ColumnSelector";
-import "./Table.scss";
 import Dropdown from "../Dropdown/Dropdown";
 import IconButton from "../IconButton/IconButton";
+import Select from "../Select/Select";
 import SettingsIcon from "../Icons/SettingsIcon";
 import PlusIcon from "../Icons/PlusIcon";
 import UploadIcon from "../Icons/UploadIcon";
-import Select from "../Select/Select";
+/* Styles */
+import "./Table.scss";
 
-const Table = ({ data, columns, filterColumns, controller = true, header = true }) => {
+const Table = ({ data, columns, filterColumns, controller = true, header = true, style }) => {
   const [visibleColumns, setVisibleColumns] = useState(columns);
   const [filters, setFilters] = useState({});
   const [options, setOptions] = useState([]);
@@ -74,7 +77,7 @@ const Table = ({ data, columns, filterColumns, controller = true, header = true 
         </div>
       )}
       <div className="table-container">
-        <table>
+        <table style={style}>
           {header && (
             <thead>
               <tr>

@@ -1,4 +1,6 @@
+/* Dependencies */
 import { useState, useRef, useEffect } from "react";
+/* Styles */
 import "./Select.scss";
 
 const Select = ({ label, options, size, variant, placeholder = "Yıl Seçiniz", ...props }) => {

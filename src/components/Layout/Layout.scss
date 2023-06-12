@@ -20,13 +20,5 @@
 
 .layout-main {
   display: flex;
-  min-height: calc(100vh - 100px);
   flex-direction: column;
-  main {
-    min-height: calc(100vh - 100px);
-  }
-}
-.layout-footer {
-  height: 40px;
-  background-color: #e5e5e5;
 }

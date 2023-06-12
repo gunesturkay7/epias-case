@@ -1,9 +1,11 @@
+/* Dependencies */
 import { configureStore } from "@reduxjs/toolkit";
-import sizesReducer from "./sizesSlice";
-import componentAReducer from "./componentASlice";
-import componentCReducer from "./componentCSlice";
-import tableReducer from "./tableSlice";
-import { localStorageMiddleware } from "./localStorageMiddleware";
+import sizesReducer from "./sizesFeature/sizesSlice";
+import tableReducer from "./tableFeature/tableSlice";
+
+import { localStorageMiddleware } from "./middleware/localStorageMiddleware";
+import componentAReducer from "./componentAFeature/componentASlice";
+import componentCReducer from "./componentCFeature/componentCSlice";
 
 export const store = configureStore({
   reducer: {

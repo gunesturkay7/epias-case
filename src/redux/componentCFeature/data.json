@@ -1,0 +1,5 @@
+[
+  { "id": 1, "contract": "ABC12345", "offer": "123123", "data": "Alış" },
+  { "id": 2, "contract": "DEF56789", "offer": "123213", "data": "Satış" },
+  { "id": 3, "contract": "GHI45678", "offer": "34534", "data": "Satış" }
+]

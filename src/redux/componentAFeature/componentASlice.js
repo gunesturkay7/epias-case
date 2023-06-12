@@ -1,7 +1,8 @@
+/* Dependencies */
 import { createSlice } from "@reduxjs/toolkit";
 
-// Import the data array
-import data from "./data";
+/* Data */
+import data from "./data.json";
 
 const initialState = {
   data: data,
@@ -17,6 +18,5 @@ const ComponentASlice = createSlice({
   },
 });
 
-// Export actions and reducer
 export const { updateData } = ComponentASlice.actions;
 export default ComponentASlice.reducer;

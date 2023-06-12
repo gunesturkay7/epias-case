@@ -1,3 +1,4 @@
+/* Styles */
 import "./Avatar.scss";
 
 const Avatar = ({ src, alt, size = "medium", variant = "circle", name }) => {

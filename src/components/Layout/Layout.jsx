@@ -1,12 +1,12 @@
+/* Styles */
 import "./Layout.scss";
 
-const Layout = ({ header, footer, sidebar, sidebarPosition = "sidebar-left", ...props }) => {
+const Layout = ({ header, footer, ...props }) => {
   return (
-    <div className={`layout ${sidebarPosition}`}>
+    <div className={`layout`}>
       {header && <header className="layout-header">{header}</header>}
 
       <div className="layout-main">
-        {sidebar && <aside className="layout-sidebar">{sidebar}</aside>}
         <main {...props}>{props.children}</main>
       </div>
 

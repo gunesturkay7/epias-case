@@ -1,11 +1,17 @@
+/* Styles */
 import "./ColumnSelector.scss";
+
 const ColumnSelector = ({ columns, visibleColumns, setVisibleColumns }) => {
   const handleColumnToggle = (key) => {
-    if (visibleColumns.find((column) => column.key === key)) {
-      setVisibleColumns(visibleColumns.filter((column) => column.key !== key));
-    } else {
-      setVisibleColumns([...visibleColumns, columns.find((column) => column.key === key)]);
-    }
+    setVisibleColumns((prevVisibleColumns) => {
+      if (prevVisibleColumns.find((column) => column.key === key)) {
+        return prevVisibleColumns.filter((column) => column.key !== key);
+      } else {
+        return columns.filter(
+          (column) => prevVisibleColumns.find((prevColumn) => prevColumn.key === column.key) || column.key === key
+        );
+      }
+    });
   };
 
   return (

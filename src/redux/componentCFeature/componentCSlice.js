@@ -1,7 +1,10 @@
+/* Dependencies */
 import { createSlice } from "@reduxjs/toolkit";
+/* Data */
+import data from "./data.json";
 
 const initialState = {
-  data: [],
+  data: data,
   showForm: false,
   newRow: {},
 };
@@ -17,7 +20,7 @@ const componentCSlice = createSlice({
       state.data.push(action.payload);
     },
     updateNewRow(state, action) {
-      console.log(action.payload);
+      // Validasyon Eklnecek
       state.newRow = { ...state.newRow, ...action.payload };
     },
   },

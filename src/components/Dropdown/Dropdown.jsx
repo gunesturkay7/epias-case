@@ -1,4 +1,6 @@
+/* Dependencies */
 import { useState, useRef, useEffect } from "react";
+/* Styles */
 import "./Dropdown.scss";
 
 const Dropdown = ({ trigger, children, alignment = "left" }) => {
@@ -7,12 +9,9 @@ const Dropdown = ({ trigger, children, alignment = "left" }) => {
   const triggerRef = useRef(null);
 
   const handleClick = (event) => {
-    // Check if clicked on trigger
     if (triggerRef.current && triggerRef.current.contains(event.target)) {
       setIsOpen(!isOpen);
-    }
-    // Check if clicked outside dropdown
-    else if (!dropdownRef.current.contains(event.target)) {
+    } else if (!dropdownRef.current.contains(event.target)) {
       setIsOpen(false);
     }
   };

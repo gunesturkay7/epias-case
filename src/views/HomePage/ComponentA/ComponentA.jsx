@@ -1,4 +1,6 @@
+/* Dependencies */
 import { useSelector } from "react-redux";
+/* Components */
 import Table from "../../../components/Table/Table";
 
 const ComponentA = () => {
@@ -14,7 +16,7 @@ const ComponentA = () => {
 
   return (
     <div>
-      <Table data={data} columns={columns} filterColumns={filterColumns} />
+      <Table data={data} columns={columns} filterColumns={filterColumns} style={{ minHeight: "600px" }} />
     </div>
   );
 };

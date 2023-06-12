@@ -1,3 +1,4 @@
+/* Styles */
 import "./Button.scss";
 
 const Button = ({ variant, children, disabled, loading, icon, ...props }) => {

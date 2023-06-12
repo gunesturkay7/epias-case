@@ -1,3 +1,4 @@
+/* Dependencies */
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
@@ -24,15 +25,12 @@ const tableSlice = createSlice({
       const index = state.visibleColumns.findIndex((column) => column.key === key);
 
       if (index >= 0) {
-        // Remove column if it's currently visible
         state.visibleColumns.splice(index, 1);
       } else {
-        // Add column if it's not visible
         state.visibleColumns.push({ key, title: action.payload });
       }
     },
     setInitialColumns: (state, action) => {
-      // Set initial columns
       state.visibleColumns = action.payload;
     },
   },

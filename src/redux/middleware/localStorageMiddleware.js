@@ -1,4 +1,5 @@
-import { setIsSavedSize } from "./sizesSlice";
+/* Dependencies */
+import { setIsSavedSize } from "../sizesFeature/sizesSlice";
 
 const defaultSizes = {
   parent: [70, 30],

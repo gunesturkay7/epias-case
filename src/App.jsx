@@ -1,27 +1,32 @@
-import "./App.scss";
-import Layout from "./components/Layout/Layout";
-import Header from "./components/Header/Header";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import HomePage from "./views/HomePage/HomePage";
+/* Dependencies */
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
+/* Components */
+import Layout from "./components/Layout/Layout";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+/* Styles */
+import "./App.scss";
+import { lazy } from "react";
+const HomePage = lazy(() => import("./views/HomePage/HomePage"));
 
 function App() {
   const header = <Header />;
-  const footer = <div>Footer</div>;
+  const footer = <Footer />;
   return (
     <>
       <Provider store={store}>
         <BrowserRouter>
           <Layout header={header} footer={footer}>
             <Routes>
-              <Route path="/" element={<HomePage />} />
+              <Route path="/" element={<Navigate to="/workspace" replace />} />
+              <Route path="/workspace" element={<HomePage />} />
               <Route
-                path="/a"
+                path="/profile"
                 element={
                   <div>
-                    asdasd<br></br>
-                    asdasd<br></br>
+                    <h1>Profile Page</h1>
                   </div>
                 }
               />

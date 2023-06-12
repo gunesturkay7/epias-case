@@ -1,14 +1,16 @@
+/* Dependencies */
+import { saveRow, toggleForm, updateNewRow } from "../../../redux/componentCFeature/componentCSlice";
+import { useSelector, useDispatch } from "react-redux";
+/* Components */
 import CustomInput from "../../../components/Input/CustomInput";
 import Button from "../../../components/Button/Button";
 import Table from "../../../components/Table/Table";
-import { useSelector, useDispatch } from "react-redux";
-import { toggleForm, saveRow, updateNewRow } from "../../../redux/componentCSlice";
+/* Styles */
+import "./ComponentC.scss";
 
 const ComponentC = () => {
   const dispatch = useDispatch();
-  const data = useSelector((state) => state.componentC.data);
-  const showForm = useSelector((state) => state.componentC.showForm);
-  const newRow = useSelector((state) => state.componentC.newRow);
+  const { data, showForm, newRow } = useSelector((state) => state.componentC);
 
   const handleInputChange = (e, fieldName) => {
     dispatch(updateNewRow({ [fieldName]: e.target.value }));
@@ -32,7 +34,7 @@ const ComponentC = () => {
   return (
     <div>
       <Table data={data} columns={columns} filterColumns={["contract"]} controller={false} header={false} />
-      <div className="asd">
+      <div className="component-c">
         {showForm && (
           <div className="work-area-form-area-1">
             <CustomInput variant="outlined" placeholder="No giriniz" onChange={(e) => handleInputChange(e, "id")} />

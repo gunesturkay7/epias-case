@@ -1,4 +1,4 @@
-import React from "react";
+/* Styles */
 import "./IconButton.scss";
 
 const IconButton = ({ variant, size, outlined, icon, ...props }) => {

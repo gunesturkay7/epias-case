@@ -1,11 +1,14 @@
-import { setParentSizes, setChild1Sizes, setChild2Sizes } from "../../redux/sizesSlice";
-import "./HomePage.scss";
-import ComponentA from "./ComponentA/ComponentA";
-import ComponentC from "./ComponentC/ComponentC";
-import ComponentB from "./ComponentB/ComponentB";
+/* Dependencies */
 import { useDispatch, useSelector } from "react-redux";
 
 import Split from "react-split";
+/* Components */
+import ComponentA from "./ComponentA/ComponentA";
+import ComponentB from "./ComponentB/ComponentB";
+import ComponentC from "./ComponentC/ComponentC";
+/* Styles */
+import "./HomePage.scss";
+import { setChild1Sizes, setChild2Sizes, setParentSizes } from "../../redux/sizesFeature/sizesSlice";
 
 const HomePage = () => {
   const dispatch = useDispatch();
