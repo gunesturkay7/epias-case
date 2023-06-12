@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import "./ComponentB.scss";
 
 const ComponentB = () => {
-  const sizes = useSelector((state) => state.sizes);
+  const sizes = useSelector((state) => state.sizes.sizes);
 
   return (
     <div className="size-indicator">

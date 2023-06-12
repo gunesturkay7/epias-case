@@ -1,13 +1,11 @@
-import { useDispatch, useSelector } from "react-redux";
-import { toggleColumnVisibility } from "../../redux/tableSlice"; // Adjust path as needed
 import "./ColumnSelector.scss";
-
-const ColumnSelector = ({ columns }) => {
-  const dispatch = useDispatch();
-  const visibleColumns = useSelector((state) => state.table.visibleColumns);
-
+const ColumnSelector = ({ columns, visibleColumns, setVisibleColumns }) => {
   const handleColumnToggle = (key) => {
-    dispatch(toggleColumnVisibility(key));
+    if (visibleColumns.find((column) => column.key === key)) {
+      setVisibleColumns(visibleColumns.filter((column) => column.key !== key));
+    } else {
+      setVisibleColumns([...visibleColumns, columns.find((column) => column.key === key)]);
+    }
   };
 
   return (
@@ -19,6 +17,7 @@ const ColumnSelector = ({ columns }) => {
             checked={!!visibleColumns.find((c) => c.key === column.key)}
             onChange={() => handleColumnToggle(column.key)}
           />
+
           {column.title}
         </label>
       ))}

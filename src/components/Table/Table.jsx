@@ -1,5 +1,4 @@
-import { useSelector, useDispatch } from "react-redux";
-import { setVisibleColumns, setFilters, setOptions, setInitialColumns } from "../../redux/tableSlice";
+import { useState, useEffect, useCallback } from "react";
 import ColumnSelector from "./ColumnSelector";
 import "./Table.scss";
 import Dropdown from "../Dropdown/Dropdown";
@@ -8,23 +7,37 @@ import SettingsIcon from "../Icons/SettingsIcon";
 import PlusIcon from "../Icons/PlusIcon";
 import UploadIcon from "../Icons/UploadIcon";
 import Select from "../Select/Select";
-import { useEffect } from "react";
 
 const Table = ({ data, columns, filterColumns, controller = true, header = true }) => {
-  const dispatch = useDispatch();
-  const visibleColumns = useSelector((state) => state.table.visibleColumns);
-  const filters = useSelector((state) => state.table.filters);
+  const [visibleColumns, setVisibleColumns] = useState(columns);
+  const [filters, setFilters] = useState({});
+  const [options, setOptions] = useState([]);
 
   useEffect(() => {
-    const newOptions = columns.map((column) => ({ value: column.key, label: column.title }));
-    dispatch(setOptions(newOptions));
-  }, [columns, dispatch]);
+    if (filterColumns) {
+      const newOptions = columns
+        .filter((column) => filterColumns.includes(column.key))
+        .map((column) => ({
+          value: column.key,
+          label: column.title,
+        }));
+      setOptions(newOptions);
+    } else {
+      const newOptions = columns.map((column) => ({
+        value: column.key,
+        label: column.title,
+      }));
+      setOptions(newOptions);
+    }
+  }, [columns, filterColumns]);
 
-  useEffect(() => {
-    // Set the initial columns to be all columns passed in through props
-    dispatch(setInitialColumns(columns));
-    // ... rest of your effect logic
-  }, [columns, dispatch]);
+  const handleFilterChange = useCallback((columnKey, selectedValue) => {
+    setFilters((prevFilters) => ({
+      ...prevFilters,
+      [columnKey]: selectedValue,
+    }));
+  }, []);
+
   const filteredData = data.filter((item) =>
     Object.entries(filters).every(([key, value]) => (value ? item[key].toString() === value : true))
   );
@@ -33,19 +46,20 @@ const Table = ({ data, columns, filterColumns, controller = true, header = true 
     const values = data.map((item) => item[columnKey]);
     return [...new Set(values)].map((value) => ({ value, label: value }));
   };
+
   return (
     <div className="table-wrapper">
       {controller && (
         <div className="table-controller">
           <div className="table-controller-left">
-            {filterColumns.map((columnKey) => (
-              <div key={columnKey} style={{ marginRight: "10px" }}>
+            {options.map((option) => (
+              <div key={option.value} style={{ marginRight: "10px" }}>
                 <Select
-                  options={uniqueColumnValues(columnKey)}
+                  options={uniqueColumnValues(option.value)}
                   size="xs"
                   variant="primary"
-                  onChange={(e) => dispatch(setFilters({ [columnKey]: e.target.value }))}
-                  placeholder={`Select ${columnKey}`}
+                  onChange={(e) => handleFilterChange(option.value, e.target.value)}
+                  placeholder={option.label + " Seçiniz"}
                 />
               </div>
             ))}
@@ -53,11 +67,7 @@ const Table = ({ data, columns, filterColumns, controller = true, header = true 
           <div className="table-controller-right">
             <IconButton icon={<UploadIcon height="15px" />} />
             <Dropdown trigger={<IconButton icon={<SettingsIcon height="15px" />} />}>
-              <ColumnSelector
-                columns={columns}
-                visibleColumns={visibleColumns}
-                setVisibleColumns={(cols) => dispatch(setVisibleColumns(cols))}
-              />
+              <ColumnSelector columns={columns} visibleColumns={visibleColumns} setVisibleColumns={setVisibleColumns} />
             </Dropdown>
             <IconButton icon={<PlusIcon height="15px" />} />
           </div>

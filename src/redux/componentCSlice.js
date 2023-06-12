@@ -17,6 +17,7 @@ const componentCSlice = createSlice({
       state.data.push(action.payload);
     },
     updateNewRow(state, action) {
+      console.log(action.payload);
       state.newRow = { ...state.newRow, ...action.payload };
     },
   },

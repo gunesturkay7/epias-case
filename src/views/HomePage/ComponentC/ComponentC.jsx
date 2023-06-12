@@ -31,7 +31,7 @@ const ComponentC = () => {
 
   return (
     <div>
-      <Table data={data} columns={columns} filterColumns={["contract"]} controller={true} header={false} />
+      <Table data={data} columns={columns} filterColumns={["contract"]} controller={false} header={false} />
       <div className="asd">
         {showForm && (
           <div className="work-area-form-area-1">
