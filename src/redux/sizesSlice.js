@@ -1,3 +1,4 @@
+/* Dependencies */
 import { createSlice } from "@reduxjs/toolkit";
 
 const savedSizes = JSON.parse(localStorage.getItem("sizes"));

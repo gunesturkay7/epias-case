@@ -1,11 +1,16 @@
-import { Link } from "react-router-dom";
-import "./Header.scss";
-import Logo from "./Logo";
-import UserInfo from "./UserInfo/UserInfo";
-import { useSelector } from "react-redux";
+/* Dependencies */
 import { useEffect, useState } from "react";
-import SplitIcon from "../Icons/SplitIcon";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+
+/* Components */
+import UserInfo from "./UserInfo/UserInfo";
+import Logo from "./Logo";
 import SaveIcon from "../Icons/SaveIcon";
+import SplitIcon from "../Icons/SplitIcon";
+
+/* Styles */
+import "./Header.scss";
 
 const Header = () => {
   const isSavedSize = useSelector((state) => state.sizes.isSavedSize);
@@ -63,7 +68,7 @@ const Header = () => {
   return (
     <>
       <div className="logo">
-        <Link to="/a">
+        <Link to="/workspace">
           <Logo width="50px" height="100%" />
         </Link>
       </div>

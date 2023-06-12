@@ -1,3 +1,4 @@
+/* Styles */
 import "./TableCheckBox.scss";
 
 const TableCheckBox = ({ column, visibleColumns, handleColumnToggle }) => {

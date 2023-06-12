@@ -1,8 +1,10 @@
+/* Dependencies */
+import { useSelector, useDispatch } from "react-redux";
+import { toggleForm, saveRow, updateNewRow } from "../../../redux/componentCSlice";
+/* Components */
 import CustomInput from "../../../components/Input/CustomInput";
 import Button from "../../../components/Button/Button";
 import Table from "../../../components/Table/Table";
-import { useSelector, useDispatch } from "react-redux";
-import { toggleForm, saveRow, updateNewRow } from "../../../redux/componentCSlice";
 
 const ComponentC = () => {
   const dispatch = useDispatch();

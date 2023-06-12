@@ -1,6 +1,10 @@
+/* Dependencies */
 import { Link } from "react-router-dom";
+/* Components */
 import Avatar from "../../Avatar/Avatar";
+/* Styles */
 import "./UserInfo.scss";
+
 const UserInfo = () => {
   const currentUser = {
     id: 1,

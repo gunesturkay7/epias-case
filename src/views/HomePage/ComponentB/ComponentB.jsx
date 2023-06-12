@@ -1,4 +1,6 @@
+/* Dependencies */
 import { useSelector } from "react-redux";
+/* Styles */
 import "./ComponentB.scss";
 
 const ComponentB = () => {

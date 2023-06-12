@@ -1,5 +1,7 @@
-import { useSelector } from "react-redux";
+/* Dependencies */
 import Table from "../../../components/Table/Table";
+/* Components */
+import { useSelector } from "react-redux";
 
 const ComponentA = () => {
   const data = useSelector((state) => state.componentA.data);

@@ -1,12 +1,15 @@
+/* Dependencies */
 import { useState, useEffect, useCallback } from "react";
+/* Components */
 import ColumnSelector from "./ColumnSelector";
-import "./Table.scss";
 import Dropdown from "../Dropdown/Dropdown";
 import IconButton from "../IconButton/IconButton";
 import SettingsIcon from "../Icons/SettingsIcon";
 import PlusIcon from "../Icons/PlusIcon";
 import UploadIcon from "../Icons/UploadIcon";
 import Select from "../Select/Select";
+/* Styles */
+import "./Table.scss";
 
 const Table = ({ data, columns, filterColumns, controller = true, header = true }) => {
   const [visibleColumns, setVisibleColumns] = useState(columns);

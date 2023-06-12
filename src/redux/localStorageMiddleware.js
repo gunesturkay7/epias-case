@@ -1,3 +1,4 @@
+/* Dependencies */
 import { setIsSavedSize } from "./sizesSlice";
 
 const defaultSizes = {

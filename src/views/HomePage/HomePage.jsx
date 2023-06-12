@@ -1,9 +1,13 @@
+/* Dependencies */
 import { setParentSizes, setChild1Sizes, setChild2Sizes } from "../../redux/sizesSlice";
-import "./HomePage.scss";
+import { useDispatch, useSelector } from "react-redux";
+/* Components */
 import ComponentA from "./ComponentA/ComponentA";
 import ComponentC from "./ComponentC/ComponentC";
 import ComponentB from "./ComponentB/ComponentB";
-import { useDispatch, useSelector } from "react-redux";
+
+/* Styles */
+import "./HomePage.scss";
 
 import Split from "react-split";
 

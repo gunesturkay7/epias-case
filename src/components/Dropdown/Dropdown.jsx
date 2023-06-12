@@ -1,5 +1,8 @@
-import { useState, useRef, useEffect } from "react";
+/* Styles */
 import "./Dropdown.scss";
+
+/* Dependencies */
+import { useState, useRef, useEffect } from "react";
 
 const Dropdown = ({ trigger, children, alignment = "left" }) => {
   const [isOpen, setIsOpen] = useState(false);

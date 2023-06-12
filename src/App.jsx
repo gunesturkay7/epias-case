@@ -1,10 +1,14 @@
-import "./App.scss";
-import Layout from "./components/Layout/Layout";
-import Header from "./components/Header/Header";
+/* Dependencies */
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import HomePage from "./views/HomePage/HomePage";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
+/* Components */
+import Layout from "./components/Layout/Layout";
+import Header from "./components/Header/Header";
+import HomePage from "./views/HomePage/HomePage";
+
+/* Styles */
+import "./App.scss";
 
 function App() {
   const header = <Header />;
@@ -16,15 +20,7 @@ function App() {
           <Layout header={header} footer={footer}>
             <Routes>
               <Route path="/" element={<HomePage />} />
-              <Route
-                path="/a"
-                element={
-                  <div>
-                    asdasd<br></br>
-                    asdasd<br></br>
-                  </div>
-                }
-              />
+              <Route path="/workspace" element={<HomePage />} />
             </Routes>
           </Layout>
         </BrowserRouter>

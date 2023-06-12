@@ -1,3 +1,4 @@
+/* Styles */
 import "./ColumnSelector.scss";
 const ColumnSelector = ({ columns, visibleColumns, setVisibleColumns }) => {
   const handleColumnToggle = (key) => {

@@ -1,3 +1,4 @@
+/* Styles */
 import "./Layout.scss";
 
 const Layout = ({ header, footer, sidebar, sidebarPosition = "sidebar-left", ...props }) => {

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+/* Dependencies */
+import { useState } from "react";
 
 const ColumnFilter = ({ column, onChange }) => {
   const [value, setValue] = useState("");

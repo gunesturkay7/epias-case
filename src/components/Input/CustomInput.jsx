@@ -1,3 +1,4 @@
+/* Styles */
 import "./CustomInput.scss";
 
 const CustomInput = ({ variant, label, error, success, ...props }) => {

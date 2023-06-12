@@ -1,6 +1,7 @@
+/* Dependencies */
 import { createSlice } from "@reduxjs/toolkit";
 
-// Import the data array
+/* Data */
 import data from "./data";
 
 const initialState = {
