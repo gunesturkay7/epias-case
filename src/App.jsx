@@ -9,7 +9,7 @@ import Footer from "./components/Footer/Footer";
 /* Styles */
 import "./App.scss";
 import { lazy } from "react";
-const HomePage = lazy(() => import("./views/HomePage/HomePage"));
+const WorkspacePage = lazy(() => import("./views/WorkspacePage/WorkspacePage"));
 
 function App() {
   const header = <Header />;
@@ -21,7 +21,7 @@ function App() {
           <Layout header={header} footer={footer}>
             <Routes>
               <Route path="/" element={<Navigate to="/workspace" replace />} />
-              <Route path="/workspace" element={<HomePage />} />
+              <Route path="/workspace" element={<WorkspacePage />} />
               <Route
                 path="/profile"
                 element={

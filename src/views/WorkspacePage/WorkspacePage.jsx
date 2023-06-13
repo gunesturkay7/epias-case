@@ -7,10 +7,10 @@ import ComponentA from "./ComponentA/ComponentA";
 import ComponentB from "./ComponentB/ComponentB";
 import ComponentC from "./ComponentC/ComponentC";
 /* Styles */
-import "./HomePage.scss";
+import "./WorkspacePage.scss";
 import { setChild1Sizes, setChild2Sizes, setParentSizes } from "../../redux/sizesFeature/sizesSlice";
 
-const HomePage = () => {
+const WorkspacePage = () => {
   const dispatch = useDispatch();
   const sizes = useSelector((state) => state.sizes.sizes);
 
@@ -69,4 +69,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default WorkspacePage;
