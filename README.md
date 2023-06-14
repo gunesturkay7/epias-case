@@ -38,7 +38,7 @@ Bu, Vite geliştirme sunucusunu başlatır. Terminalde gösterilen URL'yi kontro
 ## Betikler
 
 - `npm run dev`: Vite geliştirme sunucusunu başlatır.
-- `npm run build`: Üretim için uygulamayı derler.
+- `npm run build`: Ürün için uygulamayı derler.
 - `npm run lint`: ESLint ile kaynak kodu kontrol eder.
 - `npm run preview`: Üretim yapısını önizleme modunda görüntüler.
 
